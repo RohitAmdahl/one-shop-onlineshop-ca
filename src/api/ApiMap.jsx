@@ -6,7 +6,7 @@ const ApiMap = () => {
   const { products } = useContext(ProductContext);
   return (
     <>
-      <div className=" container max-w-4xl mx-auto">
+      <div className=" container max-w-sm p-10   md:max-w-xl lg:max-w-4xl  mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => {
             return <Card key={product.id} product={product} />;

@@ -12,7 +12,10 @@ const MainSection = () => {
           <img src={ModelPic} alt="Modelpicture" />
         </div>
         <div className="m-10 flex justify-center items-center">
-          <NavLink className=" font-pins bg-primary px-5 py-1 text-pink hover:bg-blue-600 hover:rounded-r-lg hover:text-white ">
+          <NavLink
+            to="/product"
+            className=" font-pins bg-primary px-5 py-1 text-pink hover:bg-blue-600 hover:rounded-r-lg hover:text-white "
+          >
             Shop now
           </NavLink>
         </div>
