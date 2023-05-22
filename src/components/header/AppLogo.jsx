@@ -6,11 +6,7 @@ const AppLogo = () => {
     <>
       <NavLink to="/">
         <div className=" container mx-auto w-1/2 ">
-          <img
-            src={Logo}
-            alt="website logo"
-            className="size mx-auto  px-3 w-25 h-25 "
-          />
+          <img src={Logo} alt="website logo" className=" mx-auto  p-3  " />
         </div>
       </NavLink>
     </>

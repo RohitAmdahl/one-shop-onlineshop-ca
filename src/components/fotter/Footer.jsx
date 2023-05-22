@@ -4,10 +4,10 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <>
-      <div className="footer-logo">
-        <img src={Logo} alt="logo" className="logo" />
+      <div className=" container mx-auto max-w-md flex justify-center items-center ">
+        <img src={Logo} alt="logo" className=" p-5" />
       </div>
-      <div className="name">
+      <div className="container mx-auto max-w-md flex justify-center items-center">
         <p> &copy; Rohit.K.A {year}</p>
       </div>
     </>
