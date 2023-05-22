@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const MainSection = () => {
   return (
     <>
-      <div className="max-w-xl mx-auto">
+      <div className="max-w-xl mx-auto text-fontcolor">
         <p className=" font-pins container mx-auto text-center p-5 text-textColor ">
           For members : free shipping over 300nok any location in Norway.
         </p>
@@ -12,7 +12,7 @@ const MainSection = () => {
           <img src={ModelPic} alt="Modelpicture" />
         </div>
         <div className="m-10 flex justify-center items-center">
-          <NavLink className="bg-primary px-5 py-1 text-pink hover:bg-blue-600 hover:rounded-r-lg hover:text-white ">
+          <NavLink className=" font-pins bg-primary px-5 py-1 text-pink hover:bg-blue-600 hover:rounded-r-lg hover:text-white ">
             Shop now
           </NavLink>
         </div>

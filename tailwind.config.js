@@ -12,7 +12,7 @@ module.exports = {
         pink: "#FFE4E0",
         primary: "#1000CB",
         lightBlue: "#301FFD",
-        textcolor: "#373737",
+        fontcolor: "#373737",
       },
     },
   },
