@@ -1,7 +1,11 @@
 import React from "react";
-
+import ErrorPage from "../components/errorPage/ErrorPage";
 const NotFound = () => {
-  return <div>NotFound</div>;
+  return (
+    <>
+      <ErrorPage />
+    </>
+  );
 };
 
 export default NotFound;
