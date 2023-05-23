@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import CartQuantity from "../components/Cart/CartQuantity";
-const AddToCart = () => {
-  //   const { id } = product;
+const AddToCart = ({ product }) => {
   const [amount, setAmount] = useState(1);
   const setDecrease = () => {
-    //product will not less then one
     amount > 1 ? setAmount(amount - 1) : setAmount(1);
   };
   const setIncrease = () => {
-    // product will go plus
-    amount < 1 ? setAmount(amount + 1) : setAmount(amount);
+    setAmount(amount + 1);
   };
+  debugger;
   return (
     <>
       <CartQuantity
