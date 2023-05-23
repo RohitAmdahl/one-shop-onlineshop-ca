@@ -2,7 +2,7 @@ import React from "react";
 import FormatPrice from "../../helper/FormatPrice";
 import Review from "../../helper/Review";
 import RatingsIcons from "../../helper/RatingsIcons";
-
+import CartQuantity from "../Cart/CartQuantity";
 const SingleItem = ({ product }) => {
   const { imageUrl, title, price, description, rating, reviews } = product;
 
@@ -48,6 +48,9 @@ const SingleItem = ({ product }) => {
             <p className="font-pins">
               <Review reviews={reviews} />
             </p>
+          </div>
+          <div>
+            <CartQuantity />
           </div>
 
           <div className="p-6 pt-0 my-4 ">
