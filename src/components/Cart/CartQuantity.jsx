@@ -3,7 +3,7 @@ import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const CartQuantity = () => {
+const CartQuantity = ({ product }) => {
   const [amount, setAmount] = useState(1);
   function setDecrease() {
     amount > 1 ? setAmount(amount - 1) : setAmount(1);

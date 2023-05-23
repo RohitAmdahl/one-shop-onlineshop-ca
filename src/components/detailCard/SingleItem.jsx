@@ -46,7 +46,7 @@ const SingleItem = ({ product }) => {
             <h2 className=" font-bold "> People Review </h2>
 
             <p className="font-pins border-b-2 py-6 mb-4">
-              <Review reviews={reviews} />
+              <Review key={reviews} reviews={reviews} />
             </p>
           </div>
           <div>

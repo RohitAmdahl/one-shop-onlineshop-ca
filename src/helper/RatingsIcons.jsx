@@ -6,7 +6,7 @@ const RatingsIcons = ({ rating }) => {
   const ratingStar = Array.from({ length: 5 }, (elem, index) => {
     let number = index + 0.4;
     return (
-      <span key={index} className="flex ">
+      <span key={index} rating={index} className="flex ">
         {rating > index + 1 ? (
           <FaStar className="text-primary" />
         ) : rating > number ? (

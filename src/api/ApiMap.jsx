@@ -8,6 +8,11 @@ const ApiMap = () => {
     <>
       <div className=" container max-w-sm p-10   md:max-w-xl lg:max-w-4xl  mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {products.length === 0 && (
+            <h1 className="text-4xl font-bold mx-auto text-center">
+              No image found
+            </h1>
+          )}
           {products.map((product) => {
             return <Card key={product.id} product={product} />;
           })}
