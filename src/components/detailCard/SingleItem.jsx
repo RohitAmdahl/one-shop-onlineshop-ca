@@ -1,15 +1,16 @@
 import React from "react";
-
+import FormatPrice from "../../helper/FormatPrice";
 const SingleItem = ({ product }) => {
   const { imageUrl, title, price, description, rating } = product;
+
   return (
     <>
-      <section className=" container max-w-xl mx-auto flex gap-4 font-pins py-3 text-fontcolor lg:flex">
-        <div className="max-w-md mx-auto">
+      <section className=" container max-w-xl mx-auto flex gap-6 font-pins py-3 text-fontcolor lg:flex">
+        <div className="max-w-lg mx-auto">
           <img
             src={imageUrl}
             alt={title}
-            className=" rounded-md w-full max-w-sm py-5"
+            className=" rounded-md w-full max-w-lg py-5 m-2"
           />
         </div>
         <div className="flex flex-col p-3">
@@ -20,7 +21,8 @@ const SingleItem = ({ product }) => {
             <div className="py-2 my-3">
               <div className="flex  justify-between">
                 <h2 className=" font-medium ">Price</h2>
-                <p> {price} Nok </p>
+                {/* <p> {price} Nok </p> */}
+                <p> {<FormatPrice price={price} />} </p>
               </div>
               <div className="flex gap-5 justify-between">
                 <h2 className=" font-medium ">Rating</h2>
