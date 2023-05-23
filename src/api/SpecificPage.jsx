@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Card from "../components/card/Card";
+import SingleItem from "../components/detailCard/SingleItem";
 
 const SpecificPage = () => {
   const [product, setProduct] = useState(null);
@@ -30,7 +30,11 @@ const SpecificPage = () => {
     getData(`https://api.noroff.dev/api/v1/online-shop/${id}`);
   }, [id]);
   if (isLoading || !product) {
-    return <div>Loading</div>;
+    return (
+      <div>
+        <h1>Loding....</h1>
+      </div>
+    );
   }
 
   if (isError) {
@@ -39,11 +43,7 @@ const SpecificPage = () => {
 
   console.log(product);
 
-  return (
-    <>
-      <Card product={product} />
-    </>
-  );
+  return <SingleItem product={product} />;
 };
 
 export default SpecificPage;
