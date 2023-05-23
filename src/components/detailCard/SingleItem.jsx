@@ -29,7 +29,7 @@ const SingleItem = ({ product }) => {
               </div>
               <div className="flex gap-5 justify-between py-2">
                 <h2 className=" font-medium ">Rating</h2>
-                <p> {rating} </p>
+
                 <p>
                   <RatingsIcons rating={rating} />{" "}
                 </p>
