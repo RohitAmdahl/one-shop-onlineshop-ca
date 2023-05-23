@@ -1,18 +1,18 @@
 import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
-import { AiOutlinerStar } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 
 const RatingsIcons = ({ rating }) => {
-  const ratingStar = Array.from({ length: 5 }, (element, index) => {
-    let number = index + 0.5;
+  const ratingStar = Array.from({ length: 5 }, (elem, index) => {
+    let number = index + 0.4;
     return (
-      <span key={index}>
+      <span key={index} className="flex ">
         {rating > index + 1 ? (
-          <FaStar />
+          <FaStar className="text-primary" />
         ) : rating > number ? (
-          <FaStarHalfAlt />
+          <FaStarHalfAlt className="text-primary" />
         ) : (
-          <AiOutlinerStar />
+          <AiOutlineStar className="text-yellow-500" />
         )}
       </span>
     );

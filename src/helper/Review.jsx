@@ -6,17 +6,11 @@ const Review = ({ reviews }) => {
       {reviews.map((items, index) => {
         return (
           <>
-            <div key={index}>
-              <p className="font-bold">
-                Name
-                {items.username}
-              </p>
+            <div key={index} className="flex flex-col">
+              <p className="font-bold">{items.username}</p>
 
               <div className="py-2">
-                <p>
-                  comment:
-                  {items.description}
-                </p>
+                <p>{items.description}</p>
               </div>
             </div>
           </>

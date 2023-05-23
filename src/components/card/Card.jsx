@@ -3,7 +3,6 @@ import FormatPrice from "../../helper/FormatPrice";
 import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
-  //   const { product } = useContext(ProductContext);
   const { id, imageUrl, title, price, discountedPrice } = product;
 
   return (

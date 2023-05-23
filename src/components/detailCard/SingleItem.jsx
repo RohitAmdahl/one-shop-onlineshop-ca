@@ -2,6 +2,7 @@ import React from "react";
 import FormatPrice from "../../helper/FormatPrice";
 import Review from "../../helper/Review";
 import RatingsIcons from "../../helper/RatingsIcons";
+
 const SingleItem = ({ product }) => {
   const { imageUrl, title, price, description, rating, reviews } = product;
 

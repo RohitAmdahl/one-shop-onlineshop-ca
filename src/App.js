@@ -19,7 +19,7 @@ function App() {
           <Route path="/detail/:id" element={<DetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/chekout" element={<Checkout />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
