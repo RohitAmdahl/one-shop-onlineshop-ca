@@ -1,5 +1,5 @@
 import React from "react";
-
+import FormatPrice from "../../helper/FormatPrice";
 import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
@@ -8,23 +8,23 @@ const Card = ({ product }) => {
 
   return (
     <>
-      <div className=" container mx-auto max-w-lg ">
+      <div className=" container mx-auto max-w-lg font-pins ">
         <div className="relative flex w-50 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md ">
           <div className="relative m-2 h-60 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
             <img src={imageUrl} alt={title} />
           </div>
           <div className="p-6">
             <div className="mb-2 flex items-center justify-between">
-              <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+              <p className="block  text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
                 {title}
               </p>
-              <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
-                {price}
+              <p className="block font-sans text-base font-medium leading-relaxed antialiased text-primary ">
+                {<FormatPrice price={price} />}
               </p>
             </div>
-            <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased opacity-75">
-              {discountedPrice}
-            </p>
+            <del className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased ">
+              <FormatPrice price={discountedPrice} />
+            </del>
           </div>
           <div className="p-6 pt-0">
             <Link
