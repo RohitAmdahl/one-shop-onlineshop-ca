@@ -19,7 +19,7 @@ const SearchBar = ({ onSearch }) => {
             name="text"
             value={search}
             onChange={handelSearch}
-            placeholder="Search..."
+            placeholder="Search your product......"
           />
         </div>
       </form>
