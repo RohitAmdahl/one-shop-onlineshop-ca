@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
-  const { search, setSearch } = useState("");
+  const [search, setSearch] = useState("");
 
   const handelSearch = (e) => {
     // e.preventDefault();
