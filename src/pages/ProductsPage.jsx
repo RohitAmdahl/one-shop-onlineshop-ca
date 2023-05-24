@@ -1,7 +1,7 @@
 import React from "react";
-import ApiMap from "../api/ApiMap";
+import ProductList from "../api/ProductList";
 const ProductsPage = () => {
-  return <ApiMap />;
+  return <ProductList />;
 };
 
 export default ProductsPage;

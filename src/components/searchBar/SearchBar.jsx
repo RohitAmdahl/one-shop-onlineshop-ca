@@ -4,7 +4,7 @@ const SearchBar = ({ onSearch }) => {
   const { search, setSearch } = useState("");
 
   const handelSearch = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     onSearch(e.target.value);
     setSearch(e.target.value);
   };
