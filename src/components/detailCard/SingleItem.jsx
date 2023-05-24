@@ -25,29 +25,27 @@ const SingleItem = ({ product }) => {
               <div className="flex  justify-between py-2">
                 <h2 className=" font-medium ">Price</h2>
 
-                <p className="text-primary">{<FormatPrice price={price} />}</p>
+                <div className="text-primary">
+                  {<FormatPrice price={price} />}
+                </div>
               </div>
               <div className="flex gap-5 justify-between py-2">
                 <h2 className=" font-medium ">Rating</h2>
-
-                <p>
-                  <RatingsIcons rating={rating} />{" "}
-                </p>
+                <div>
+                  <RatingsIcons rating={rating} />
+                </div>
               </div>
             </div>
           </div>
           <div className="my-3 border-b-2 py-2">
             <h2 className=" font-semibold ">Description</h2>
-            <div>
-              <p>{description} </p>
-            </div>
+
+            <p>{description}</p>
           </div>
           <div className="flex flex-col">
             <h2 className=" font-bold "> People Review </h2>
 
-            <p className="font-pins border-b-2 py-6 mb-4">
-              <Review key={reviews} reviews={reviews} />
-            </p>
+            <Review key={reviews} reviews={reviews} />
           </div>
           <div>
             <CartQuantity />

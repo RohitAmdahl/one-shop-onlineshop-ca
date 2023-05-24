@@ -17,9 +17,9 @@ const Card = ({ product }) => {
               <p className="block  text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
                 {title}
               </p>
-              <p className="block font-sans text-base font-medium leading-relaxed antialiased text-primary ">
+              <div className="block font-sans text-base font-medium leading-relaxed antialiased text-primary ">
                 {<FormatPrice price={price} />}
-              </p>
+              </div>
             </div>
             <del className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased ">
               <FormatPrice price={discountedPrice} />
