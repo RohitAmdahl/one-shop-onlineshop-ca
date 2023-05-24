@@ -12,11 +12,17 @@ const ProductList = () => {
     <>
       <SearchBar onSearch={setSearch} />
       <div className=" container max-w-sm p-10   md:max-w-xl lg:max-w-4xl  mx-auto">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {filteredProducts.map((product) => {
-            return <Card key={product.id} product={product} />;
-          })}
-        </div>
+        {filteredProducts?.length > 0 ? (
+          <div className="grid grid-cols-1 gap-10 mx-auto max-w-4xl md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-8">
+            {filteredProducts.map((product) => {
+              return <Card key={product.id} product={product} />;
+            })}
+          </div>
+        ) : (
+          <div className="mx-auto text-center text-4xl font-bold ">
+            No Products found according to your search.
+          </div>
+        )}
       </div>
     </>
   );
