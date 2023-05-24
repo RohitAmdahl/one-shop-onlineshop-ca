@@ -4,7 +4,7 @@ import { ProductContext } from "../../context/ProductContext";
 
 const SearchBar = ({ product }) => {
   const [text, setText] = useState("");
-  console.log(text);
+
   const { products } = useContext(ProductContext);
 
   const filterProducts = products.filter((items) => {
