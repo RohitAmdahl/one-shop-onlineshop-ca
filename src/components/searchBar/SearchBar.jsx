@@ -10,7 +10,7 @@ const SearchBar = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const filterProducts = products.filter((items) => {
-      return items.title.toLowerCase().includes(text);
+      return items.title.trim().toLowerCase().includes(text);
     });
     console.log(filterProducts);
   };
