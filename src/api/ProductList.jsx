@@ -2,7 +2,7 @@ import { ProductContext } from "../context/ProductContext";
 import React, { useContext, useState } from "react";
 import Card from "../components/card/Card";
 import SearchBar from "../components/searchBar/SearchBar";
-const ApiMap = () => {
+const ProductList = () => {
   const { products } = useContext(ProductContext);
   const { search, setSearch } = useState("");
   const filterProducts = products.filter((product) => {
@@ -36,4 +36,4 @@ const ApiMap = () => {
   );
 };
 
-export default ApiMap;
+export default ProductList;
