@@ -15,12 +15,12 @@ const SingleItem = ({ product }) => {
   } = product;
 
   return (
-    <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-2xl md:max-w-xl md:flex">
+    <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-4xl md:max-w-xl md:flex">
       <div className="max-w-xl mx-auto p-10">
         <img
           src={imageUrl}
           alt={title}
-          className=" rounded-md w-full max-w-md py-5 m-2 md:max-w-sm lg:py-5 lg:max-w-md"
+          className=" rounded-md w-full max-w-md py-5 m-2 md:max-w-md  lg:max-w-md p-10 md:p-2"
         />
       </div>
       <div className="flex flex-col p-3">
