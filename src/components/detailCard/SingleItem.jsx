@@ -3,7 +3,7 @@ import FormatPrice from "../../helper/FormatPrice";
 import Review from "../../helper/Review";
 import RatingsIcons from "../../helper/RatingsIcons";
 import CartQuantity from "../Cart/CartQuantity";
-import CalculateDiscount from "../../helper/Calculate";
+
 const SingleItem = ({ product }) => {
   const {
     imageUrl,
@@ -14,10 +14,23 @@ const SingleItem = ({ product }) => {
     reviews,
     discountedPrice,
   } = product;
+  const calculateDiscount = () => {
+    if (product.discountedPrice && product.price) {
+      const discount = product.price - product.discountedPrice;
+      const discountPercentage = Math.round((discount / product.price) * 100);
+      return discountPercentage;
+    }
+    return 0;
+  };
 
   return (
     <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-4xl md:max-w-xl md:flex">
       <div className="max-w-xl mx-auto p-10">
+        {product.discountedPrice && (
+          <p className="bg-red-500 text-white p-2 text-center rounded-full w-1/2">
+            Discount: {calculateDiscount()}% off
+          </p>
+        )}
         <img
           src={imageUrl}
           alt={title}
@@ -42,9 +55,6 @@ const SingleItem = ({ product }) => {
                   </p>
                 )}
               </del>
-              <p>
-                <CalculateDiscount />
-              </p>
             </div>
           </div>
           <div className="flex gap-5 justify-between  py-2">

@@ -2,6 +2,7 @@ import { ProductContext } from "../context/ProductContext";
 import React, { useContext, useState } from "react";
 import Card from "../components/card/Card";
 import SearchBar from "../components/searchBar/SearchBar";
+
 const ProductList = () => {
   const { products } = useContext(ProductContext);
 
@@ -9,6 +10,7 @@ const ProductList = () => {
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(search.toLowerCase())
   );
+
   console.log(filteredProducts);
   return (
     <>
