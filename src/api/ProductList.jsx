@@ -6,11 +6,9 @@ import SearchBar from "../components/searchBar/SearchBar";
 const ProductList = () => {
   const { products } = useContext(ProductContext);
   const [search, setSearch] = useState("");
-
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(search.toLowerCase())
   );
-  console.log(filteredProducts);
 
   return (
     <>
