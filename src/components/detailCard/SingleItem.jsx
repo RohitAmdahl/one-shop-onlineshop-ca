@@ -14,7 +14,7 @@ const SingleItem = ({ product }) => {
     reviews,
     discountedPrice,
   } = product;
-  const calculateDiscount = () => {
+  const discount = () => {
     if (product.discountedPrice && product.price) {
       const discount = product.price - product.discountedPrice;
       const discountPercentage = Math.round((discount / product.price) * 100);
@@ -27,8 +27,8 @@ const SingleItem = ({ product }) => {
     <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-4xl md:max-w-xl md:flex">
       <div className="max-w-xl mx-auto p-10">
         {product.discountedPrice && (
-          <p className="bg-red-500 text-white p-2 text-center rounded-full w-1/2">
-            Discount: {calculateDiscount()}% off
+          <p className="bg-red-500 text-white p-2 text-center rounded-full  w-2/5 ">
+            - {discount()}% off
           </p>
         )}
         <img
