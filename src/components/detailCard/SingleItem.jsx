@@ -9,6 +9,7 @@ import { CartContext } from "../../context/CartContext";
 import { useContext, useState } from "react";
 const SingleItem = ({ product }) => {
   const { addToCart } = useContext(CartContext);
+  console.log(useContext(CartContext));
   const [amount, setAmount] = useState(1);
   function setDecrease() {
     amount > 1 ? setAmount(amount - 1) : setAmount(1);
@@ -20,6 +21,7 @@ const SingleItem = ({ product }) => {
   }
 
   const {
+    id,
     imageUrl,
     title,
     price,
@@ -102,7 +104,7 @@ const SingleItem = ({ product }) => {
         <div className="p-6 pt-0 my-4 ">
           <Link to="/cart">
             <button
-              onClick={() => addToCart()}
+              onClick={() => addToCart(id)}
               className="block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none border-2 border-primary "
             >
               Add to Cart

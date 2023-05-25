@@ -6,8 +6,9 @@ export const CartContext = createContext();
 // create provider with function
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const addToCart = () => {
-    console.log("addtoCart");
+
+  const addToCart = (id) => {
+    console.log();
   };
   return (
     <CartContext.Provider value={{ addToCart }}>
