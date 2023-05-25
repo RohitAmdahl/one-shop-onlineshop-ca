@@ -4,7 +4,15 @@ import Review from "../../helper/Review";
 import RatingsIcons from "../../helper/RatingsIcons";
 import CartQuantity from "../Cart/CartQuantity";
 const SingleItem = ({ product }) => {
-  const { imageUrl, title, price, description, rating, reviews } = product;
+  const {
+    imageUrl,
+    title,
+    price,
+    description,
+    rating,
+    reviews,
+    discountedPrice,
+  } = product;
 
   return (
     <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-2xl md:max-w-xl md:flex">
@@ -19,26 +27,32 @@ const SingleItem = ({ product }) => {
         <h1 className="w-full font-bold text-center border-b-2 py-5 lg:text-2xl md:text-1xl ">
           {title}
         </h1>
-        <div className="">
-          <div className="py-2 my-3">
-            <div className="flex  justify-between py-2">
-              <h2 className=" font-medium ">Price</h2>
 
-              <div className="text-primary">
-                {<FormatPrice price={price} />}
-              </div>
+        <div className="py-2 my-3">
+          <div className="flex  flex-col py-2">
+            <h2 className=" font-medium ">Price</h2>
+
+            <div className=" flex justify-between gap-8 font-sans text-base font-medium leading-relaxed antialiased text-primary ">
+              {<FormatPrice price={discountedPrice} />}
+              <del className=" font-sans text-sm font-normal leading-normal  antialiased py-1 text-red-600  ">
+                {discountedPrice !== price && (
+                  <p>
+                    <FormatPrice price={price} />
+                  </p>
+                )}
+              </del>
             </div>
-            <div className="flex gap-5 justify-between py-2">
-              <h2 className=" font-medium ">Rating</h2>
-              <div>
-                <RatingsIcons rating={rating} />
-              </div>
+          </div>
+          <div className="flex gap-5 justify-between  py-2">
+            <h2 className=" font-medium ">Rating</h2>
+            <div className="flex">
+              <RatingsIcons rating={rating} />
             </div>
           </div>
         </div>
+
         <div className="my-3 border-b-2 py-2">
           <h2 className=" font-semibold ">Description</h2>
-
           <p>{description}</p>
         </div>
         <div className="flex flex-col">
