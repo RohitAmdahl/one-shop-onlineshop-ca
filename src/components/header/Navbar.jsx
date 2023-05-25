@@ -31,8 +31,12 @@ const NavBar = () => {
             </li>
             <li className="p-2  hover:text-indigo-800 hover:underline font-medium">
               <NavLink to="/cart">
-                <BsHandbag className=" absolute " />
-                <span className="w-full relative bottom-5 left-3">6</span>
+                <div>
+                  <BsHandbag className=" absolute  text-2xl flex justify-center " />
+                  <span className="w-full font-bold text-sm relative left-8">
+                    6
+                  </span>
+                </div>
               </NavLink>
             </li>
           </ul>
