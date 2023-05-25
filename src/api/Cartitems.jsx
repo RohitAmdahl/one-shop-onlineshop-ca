@@ -4,7 +4,7 @@ import CartProducts from "../components/Cart/CartProducts";
 
 const CartItems = () => {
   const { cart } = useContext(CartContext);
-  console.log(cart);
+  console.log(useContext(CartContext));
   console.log(cart);
   return (
     <div>
