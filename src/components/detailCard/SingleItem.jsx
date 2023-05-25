@@ -3,6 +3,7 @@ import FormatPrice from "../../helper/FormatPrice";
 import Review from "../../helper/Review";
 import RatingsIcons from "../../helper/RatingsIcons";
 import CartQuantity from "../Cart/CartQuantity";
+import CalculateDiscount from "../../helper/Calculate";
 const SingleItem = ({ product }) => {
   const {
     imageUrl,
@@ -41,6 +42,9 @@ const SingleItem = ({ product }) => {
                   </p>
                 )}
               </del>
+              <p>
+                <CalculateDiscount />
+              </p>
             </div>
           </div>
           <div className="flex gap-5 justify-between  py-2">

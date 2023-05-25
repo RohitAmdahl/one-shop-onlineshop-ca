@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
   const { id, imageUrl, title, price, discountedPrice } = product;
-
   return (
     <>
       <div className=" container mx-auto max-w-lg font-pins ">
