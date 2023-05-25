@@ -1,10 +1,10 @@
 import React from "react";
-// import cart context
-// import { ShopContext } from "../context/ShopContext";
+import CartProducts from "../components/Cart/CartProducts";
+
 const CartPage = () => {
   return (
     <div>
-      <h2 className="text-4xl font-bold">cart</h2>
+      <CartProducts />
     </div>
   );
 };
