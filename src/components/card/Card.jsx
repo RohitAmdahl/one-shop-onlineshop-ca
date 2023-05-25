@@ -13,17 +13,21 @@ const Card = ({ product }) => {
             <img src={imageUrl} alt={title} />
           </div>
           <div className="p-6">
-            <div className="mb-2 flex items-center justify-between">
+            <div className="mb-2 flex flex-col">
               <p className="block  text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
                 {title}
               </p>
-              <div className="block font-sans text-base font-medium leading-relaxed antialiased text-primary ">
-                {<FormatPrice price={price} />}
+              <div className=" flex gap-8 font-sans text-base font-medium leading-relaxed antialiased text-primary ">
+                {<FormatPrice price={discountedPrice} />}
+                <del className=" font-sans text-sm font-normal leading-normal  antialiased py-1 text-red-600  ">
+                  {discountedPrice !== price && (
+                    <p>
+                      <FormatPrice price={price} />
+                    </p>
+                  )}
+                </del>
               </div>
             </div>
-            <del className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased ">
-              <FormatPrice price={discountedPrice} />
-            </del>
           </div>
           <div className="p-6 pt-0">
             <Link
