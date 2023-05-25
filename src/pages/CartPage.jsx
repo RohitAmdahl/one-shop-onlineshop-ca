@@ -1,5 +1,6 @@
 import React from "react";
-
+// import cart context
+// import { ShopContext } from "../context/ShopContext";
 const CartPage = () => {
   return (
     <div>
