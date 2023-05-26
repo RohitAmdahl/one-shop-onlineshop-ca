@@ -5,7 +5,7 @@ import { FaMinus } from "react-icons/fa";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { CartContext } from "../../context/CartContext";
 const CartProducts = ({ cartItem }) => {
-  const { removeFromCart } = useContext(CartContext);
+  const { removeFromCart, TotalAmount } = useContext(CartContext);
 
   const [amount, setAmount] = useState(1);
   function setDecrease() {
@@ -34,9 +34,9 @@ const CartProducts = ({ cartItem }) => {
           <div className="flex flex-col">
             <p className="text-center"> Quantity</p>
             <div className="flex gap-5 py-5 items-center ">
-              <FaMinus onClick={setDecrease} />
+              <FaMinus className="cursor-pointer" onClick={setDecrease} />
               <div className="font-bold  text-1xl text-primary">{amount}</div>
-              <FaPlus onClick={setIncrease} />
+              <FaPlus className="cursor-pointer" onClick={setIncrease} />
             </div>
           </div>
           <div>

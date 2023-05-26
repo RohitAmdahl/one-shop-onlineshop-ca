@@ -28,7 +28,7 @@ const CartProvider = ({ children }) => {
   };
 
   // removing the cart
-  const removeFromCart = (id) => {
+  const removeFromCart = (id, discountedPrice) => {
     const newCart = cart.filter((item) => {
       return item.id !== id;
     });
@@ -38,11 +38,16 @@ const CartProvider = ({ children }) => {
   const clearCart = () => {
     setCart([]);
   };
+  const TotalAmount = (id) => {
+    const item = cart.find((item) => item.id === id);
+    addToCart(item, id);
+    console.log(`item${id} amount `);
+  };
 
   console.log(cart);
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart }}
+      value={{ cart, addToCart, removeFromCart, clearCart, TotalAmount }}
     >
       {children}
     </CartContext.Provider>
