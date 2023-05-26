@@ -1,5 +1,5 @@
 import React from "react";
-import CartProducts from "../components/Cart/CartProducts";
+// import CartProducts from "../components/Cart/CartProducts";
 import CartItems from "../api/Cartitems";
 
 const CartPage = () => {
