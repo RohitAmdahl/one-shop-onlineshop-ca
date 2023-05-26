@@ -7,9 +7,11 @@ import { FaMinus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { useContext, useState } from "react";
+
 const SingleItem = ({ product }) => {
   const [amount, setAmount] = useState(1);
   const { addToCart } = useContext(CartContext);
+  console.log("this is from single page:", useContext(CartContext));
 
   function setDecrease() {
     amount > 1 ? setAmount(amount - 1) : setAmount(1);
