@@ -7,9 +7,9 @@ const CartItems = () => {
   console.log("cart", cart);
   return (
     <div>
-      {cart.map((cardItem) => {
-        console.log("item", cardItem);
-        return <CartProducts key={cardItem.id} cardItem={cardItem} />;
+      {cart.map((cartItem) => {
+        console.log("item", cartItem);
+        return <CartProducts key={cartItem.id} cartItem={cartItem} />;
       })}
     </div>
   );

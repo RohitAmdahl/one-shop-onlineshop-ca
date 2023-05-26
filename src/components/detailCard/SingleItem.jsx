@@ -21,7 +21,6 @@ const SingleItem = ({ product }) => {
     }
     setAmount(amount + 1);
   }
-
   const {
     id,
     imageUrl,
@@ -40,7 +39,6 @@ const SingleItem = ({ product }) => {
     }
     return 0;
   };
-
   return (
     <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-4xl md:max-w-xl md:flex">
       <div className="max-w-xl mx-auto p-10">
@@ -59,7 +57,6 @@ const SingleItem = ({ product }) => {
         <h1 className="w-full font-bold text-center border-b-2 py-5 lg:text-2xl md:text-1xl ">
           {title}
         </h1>
-
         <div className="py-2 my-3">
           <div className="flex  flex-col py-2">
             <h2 className=" font-medium ">Price</h2>
@@ -82,7 +79,6 @@ const SingleItem = ({ product }) => {
             </div>
           </div>
         </div>
-
         <div className="my-3 border-b-2 py-2">
           <h2 className=" font-semibold ">Description</h2>
           <p>{description}</p>
