@@ -10,9 +10,9 @@ module.exports = {
       },
       colors: {
         pink: "#FFE4E0",
-        blue: "#1000CB",
+        primary: "#1000CB",
         lightBlue: "#301FFD",
-        text: "#373737",
+        fontcolor: "#373737",
       },
     },
   },
