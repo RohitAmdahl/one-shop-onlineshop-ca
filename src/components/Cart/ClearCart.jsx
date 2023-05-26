@@ -1,0 +1,35 @@
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
+import { RiDeleteBin2Line } from "react-icons/ri";
+import CartItems from "./Cartitems";
+
+const ClearCart = () => {
+  const { clearCart } = useContext(CartContext);
+  const { id } = CartItems;
+  return (
+    <div>
+      <div className=" flex justify-center items-center flex-wrap gap-10 max-w-lg container mx-auto py-16">
+        <div className="flex  ">
+          <span className=" text-xl">Total: </span>
+          <span className=" text-xl">1000</span>
+        </div>
+        <div className=" flex text-lg ">
+          Clear cart
+          <RiDeleteBin2Line
+            onClick={() => clearCart(id)}
+            className="text-red-600 bg-yellow-400  mx-8 text-2xl cursor-pointer "
+          />
+        </div>
+        <Link
+          className="block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none border-2 border-primary "
+          type="button"
+        >
+          Checkout
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default ClearCart;

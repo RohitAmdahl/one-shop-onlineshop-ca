@@ -2,25 +2,13 @@ import React from "react";
 import FormatPrice from "../../helper/FormatPrice";
 import Review from "../../helper/Review";
 import RatingsIcons from "../../helper/RatingsIcons";
-import { FaPlus } from "react-icons/fa";
-import { FaMinus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 const SingleItem = ({ product }) => {
-  const [amount, setAmount] = useState(1);
   const { addToCart } = useContext(CartContext);
   console.log("this is from single page:", useContext(CartContext));
-
-  function setDecrease() {
-    amount > 1 ? setAmount(amount - 1) : setAmount(1);
-  }
-  function setIncrease() {
-    if (amount < 1) {
-    }
-    setAmount(amount + 1);
-  }
   const {
     id,
     imageUrl,
@@ -87,17 +75,6 @@ const SingleItem = ({ product }) => {
           <h2 className=" font-bold "> People Review </h2>
 
           <Review key={reviews} reviews={reviews} />
-        </div>
-        <div className=" container mx-auto border-b-2 py-6 mb-4 ">
-          <div className=" flex justify-around ">
-            <button onClick={setDecrease}>
-              <FaMinus />
-            </button>
-            <div className="font-bold text-1xl text-primary"> {amount} </div>
-            <button onClick={setIncrease}>
-              <FaPlus />
-            </button>
-          </div>
         </div>
         <div className="p-6 pt-0 my-4 ">
           <Link to="/cart">
