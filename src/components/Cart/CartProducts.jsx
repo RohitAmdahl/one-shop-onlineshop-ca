@@ -20,8 +20,8 @@ const CartProducts = ({ cartItem }) => {
 
   return (
     <>
-      <div className=" container mx-auto max-w-2xl my-6  border-b-2 pb-6">
-        <div className="flex gap-6 justify-around flex-wrap p-3 items-center ">
+      <div className=" container mx-auto max-w-3xl my-6  border-b-2 pb-6">
+        <div className="flex flex-col gap-6  flex-wrap p-3 items-center  md:justify-around lg:justify-around ">
           <img
             src={imageUrl}
             alt={title}
