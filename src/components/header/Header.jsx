@@ -5,8 +5,10 @@ import NavBar from "./Navbar";
 const Header = () => {
   return (
     <>
-      <AppLogo />
-      <NavBar />
+      <header className="">
+        <AppLogo />
+        <NavBar />
+      </header>
     </>
   );
 };

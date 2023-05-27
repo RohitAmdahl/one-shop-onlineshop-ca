@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiOutlineMenu } from "react-icons/ai";
-const NavBar = () => {
-  //   const [nav, setNav] = useState(false);
+import { CartContext } from "../../context/CartContext";
 
-  //   const handleNav = () => {
-  //     setNav(!nav);
-  //   };
+const NavBar = () => {
+  const [nav, setNav] = useState(false);
+  const { itemAmount } = useContext(CartContext);
+
+  // event Listener
+
+  // const handleNav = () => {
+  //   setNav(!nav);
+  //  };
+
   return (
     <>
-      <nav className="text-fontcolor font-pins ">
+      <nav className={`${nav ? "bg-green-100" : "bg-red-100 block"}`}>
         <div className="text-center py-3 border-b-2 border-y-pink w-1/2 mx-auto">
-          <ul className="hidden md:flex  container mx-auto lg:flex lg: justify-evenly lg:items-start max-w-xl">
+          <ul className=" hidden md:flex  container mx-auto lg:flex lg: justify-evenly lg:items-start max-w-xl">
             <li className="p-2   hover:text-indigo-800 hover:underline font-medium">
               <NavLink className="" to="/">
                 Home
@@ -32,13 +38,16 @@ const NavBar = () => {
             <li className="p-2  hover:text-indigo-800 hover:underline font-medium">
               <NavLink to="/cart">
                 <BsHandbag className=" absolute  text-2xl flex justify-center " />
-                <span className="w-full font-bold text-sm relative left-8">
-                  6
+                <span className="w-full font-bold text-md relative    left-5 -top-3 px-2 py-1 rounded-full bg-violet-400">
+                  {itemAmount}
                 </span>
               </NavLink>
             </li>
           </ul>
-          <div className="block md:hidden cursor-pointer">
+          <div
+            onClick={() => setNav(!nav)}
+            className="block md:hidden cursor-pointer"
+          >
             <AiOutlineMenu className="mobile-nav-icon" />
             <AiOutlineClose className="mobile-nav-icon close-outline" />
           </div>
