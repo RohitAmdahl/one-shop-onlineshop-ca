@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createContext, useState } from "react";
 // create context
 export const CartContext = createContext();
 
 // create provider with function
 const CartProvider = ({ children }) => {
+  // cart state
   const [cart, setCart] = useState([]);
+  // amount state
+  const [itemAmount, setItemAmount] = useState(0);
+
+  // update item amount total
+  useEffect(() => {
+    if (cart) {
+      const amount = cart.reduce((acc, currentItem) => {
+        return acc + currentItem.amount;
+      }, 0);
+      setItemAmount(amount);
+    }
+  }, [cart]);
 
   const addToCart = (product, id) => {
     const newItem = { ...product, amount: 1 };
@@ -76,6 +89,7 @@ const CartProvider = ({ children }) => {
         clearCart,
         setIncrease,
         setDecrease,
+        itemAmount,
       }}
     >
       {children}
