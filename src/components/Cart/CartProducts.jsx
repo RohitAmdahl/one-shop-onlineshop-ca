@@ -5,18 +5,18 @@ import { FaMinus } from "react-icons/fa";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { CartContext } from "../../context/CartContext";
 const CartProducts = ({ cartItem }) => {
-  const { removeFromCart, TotalAmount } = useContext(CartContext);
+  const { removeFromCart, setIncrease, setDecrease } = useContext(CartContext);
 
-  const [amount, setAmount] = useState(1);
-  function setDecrease() {
-    amount > 1 ? setAmount(amount - 1) : setAmount(1);
-  }
-  function setIncrease() {
-    if (amount < 1) {
-    }
-    setAmount(amount + 1);
-  }
-  const { id, title, discountedPrice, imageUrl } = cartItem;
+  // const [amount, setAmount] = useState(1);
+  // function setDecrease() {
+  //   amount > 1 ? setAmount(amount - 1) : setAmount(1);
+  // }
+  // function setIncrease() {
+  //   if (amount < 1) {
+  //   }
+  //   setAmount(amount + 1);
+  // }
+  const { id, title, discountedPrice, imageUrl, amount } = cartItem;
 
   return (
     <>
@@ -33,10 +33,20 @@ const CartProducts = ({ cartItem }) => {
           </div>
           <div className="flex flex-col">
             <p className="text-center"> Quantity</p>
-            <div className="flex gap-5 py-5 items-center ">
-              <FaMinus className="cursor-pointer" onClick={setDecrease} />
+            <div className="flex gap-5 pt-4 items-center ">
+              <div>
+                <FaMinus
+                  onClick={() => setDecrease(id)}
+                  className="cursor-pointer w-5   h-full bg-green-300"
+                />
+              </div>
               <div className="font-bold  text-1xl text-primary">{amount}</div>
-              <FaPlus className="cursor-pointer" onClick={setIncrease} />
+              <div>
+                <FaPlus
+                  onClick={() => setIncrease(id)}
+                  className="cursor-pointer w-5 h-full bg-green-300"
+                />
+              </div>
             </div>
           </div>
           <div>

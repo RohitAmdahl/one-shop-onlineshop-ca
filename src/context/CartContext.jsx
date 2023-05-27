@@ -35,19 +35,48 @@ const CartProvider = ({ children }) => {
     setCart(newCart);
   };
 
+  // clear cart
   const clearCart = () => {
     setCart([]);
   };
-  const TotalAmount = (id) => {
-    const item = cart.find((item) => item.id === id);
-    addToCart(item, id);
+
+  // setIncrease amount with id and amount
+  const setIncrease = (id) => {
+    const cartItem = cart.find((item) => item.id === id);
+    addToCart(cartItem, id);
     console.log(`item${id} amount `);
+  };
+  // setDecrease with id and ammount
+
+  const setDecrease = (id) => {
+    const cartItem = cart.find((item) => item.id === id);
+    addToCart(cartItem, id);
+    if (cartItem) {
+      const newCart = cart.map((item) => {
+        if (item.id === id) {
+          return { ...item, amount: cartItem.amount - 1 };
+        } else {
+          return item;
+        }
+      });
+      setCart(newCart);
+    }
+    if (cartItem.amount < 2) {
+      removeFromCart(id);
+    }
   };
 
   console.log(cart);
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart, TotalAmount }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        setIncrease,
+        setDecrease,
+      }}
     >
       {children}
     </CartContext.Provider>
