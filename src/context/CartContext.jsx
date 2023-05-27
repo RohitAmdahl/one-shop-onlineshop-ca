@@ -22,6 +22,7 @@ const CartProvider = ({ children }) => {
 
   // total price in cart page state
   const [total, setTotal] = useState(0);
+
   useEffect(() => {
     const total = cart.reduce((acc, item) => {
       return acc + item.discountedPrice * item.amount;
@@ -66,7 +67,6 @@ const CartProvider = ({ children }) => {
   const setIncrease = (id) => {
     const cartItem = cart.find((item) => item.id === id);
     addToCart(cartItem, id);
-    console.log(`item${id} amount `);
   };
   // setDecrease with id and ammount
 
@@ -88,7 +88,6 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  console.log(cart);
   return (
     <CartContext.Provider
       value={{
