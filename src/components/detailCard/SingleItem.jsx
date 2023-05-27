@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 const SingleItem = ({ product }) => {
   const { addToCart } = useContext(CartContext);
-  console.log("this is from single page:", useContext(CartContext));
+
   const {
     id,
     imageUrl,
