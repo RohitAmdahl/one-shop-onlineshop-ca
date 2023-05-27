@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import FormatPrice from "../../helper/FormatPrice";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
@@ -7,15 +7,6 @@ import { CartContext } from "../../context/CartContext";
 const CartProducts = ({ cartItem }) => {
   const { removeFromCart, setIncrease, setDecrease } = useContext(CartContext);
 
-  // const [amount, setAmount] = useState(1);
-  // function setDecrease() {
-  //   amount > 1 ? setAmount(amount - 1) : setAmount(1);
-  // }
-  // function setIncrease() {
-  //   if (amount < 1) {
-  //   }
-  //   setAmount(amount + 1);
-  // }
   const { id, title, discountedPrice, imageUrl, amount } = cartItem;
 
   return (
