@@ -9,12 +9,6 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
   const { itemAmount } = useContext(CartContext);
 
-  // event Listener
-
-  // const handleNav = () => {
-  //   setNav(!nav);
-  //  };
-
   return (
     <>
       <nav className={`${nav ? "bg-green-100" : "bg-red-100 block"}`}>
