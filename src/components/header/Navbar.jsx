@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
-
+import AppLogo from "./AppLogo";
 import { CartContext } from "../../context/CartContext";
 import Logo from "../../pictures/logo.png";
 import { Link } from "react-router-dom";
@@ -11,9 +11,7 @@ const NavBar = () => {
   return (
     <>
       <div className="w-full flex justify-around ">
-        <Link to="/">
-          <img src={Logo} alt="website logo" className=" p-3 " />
-        </Link>
+        <AppLogo />
         <div className="flex  justify-center">
           <Link to="/cart" className="w-full flex justify-between items-center">
             <BsHandbag className="text-3xl  " />
