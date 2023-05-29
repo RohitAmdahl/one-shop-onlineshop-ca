@@ -27,7 +27,8 @@ const CartProvider = ({ children }) => {
       return acc + item.discountedPrice * item.amount;
     }, 0);
     setTotal(total);
-  });
+    console.log(setTotal(total));
+  }, [cart]);
   // local storage adding products to localstorge
   const getItemCart = () => {
     const newCartData = localStorage.getItem("cartItem");
