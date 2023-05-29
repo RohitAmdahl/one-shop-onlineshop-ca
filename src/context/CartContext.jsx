@@ -29,7 +29,21 @@ const CartProvider = ({ children }) => {
     }, 0);
     setTotal(total);
   });
+  // local storage adding products to localstorge
+  const getItemCart = () => {
+    const newCartData = localStorage.getItem("cartItem");
+    if (newCartData === []) {
+      return [];
+    } else {
+      return JSON.parse(newCartData);
+    }
+  };
+  // seetitem cart
+  useEffect(() => {
+    localStorage.setItem("cartItem", JSON.stringify([cart]));
+  }, [cart]);
 
+  // add to cart
   const addToCart = (product, id) => {
     const newItem = { ...product, amount: 1 };
     // checking item if its alredy in cart
@@ -38,6 +52,7 @@ const CartProvider = ({ children }) => {
     });
     if (cartItem) {
       const newCart = [...cart].map((item) => {
+        console.log(...cart);
         if (item.id === id) {
           return { ...item, amount: cartItem.amount + 1 };
         } else {
@@ -45,6 +60,8 @@ const CartProvider = ({ children }) => {
         }
       });
       setCart(newCart);
+
+      console.log(getItemCart());
     } else {
       setCart([...cart, newItem]);
     }
