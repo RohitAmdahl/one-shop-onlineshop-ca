@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
 import AppLogo from "./AppLogo";
 import { CartContext } from "../../context/CartContext";
-import Logo from "../../pictures/logo.png";
 import { Link } from "react-router-dom";
 const NavBar = () => {
   const { itemAmount } = useContext(CartContext);
