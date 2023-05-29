@@ -1,13 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai";
-import { AiOutlineMenu } from "react-icons/ai";
+
 import { CartContext } from "../../context/CartContext";
 import Logo from "../../pictures/logo.png";
 import { Link } from "react-router-dom";
 const NavBar = () => {
-  const [nav, setNav] = useState(false);
   const { itemAmount } = useContext(CartContext);
 
   return (
