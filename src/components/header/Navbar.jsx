@@ -14,7 +14,7 @@ const NavBar = () => {
         <div className="flex  justify-center">
           <Link to="/cart" className="w-full flex justify-between items-center">
             <BsHandbag className="text-3xl  " />
-            <span className="w-10 h-10 font-bold text-center text-lg py-1 rounded-full bg-violet-300">
+            <span className="w-10 h-10  text-center text-2xl py-1 rounded-full bg-violet-100">
               {itemAmount}
             </span>
           </Link>
