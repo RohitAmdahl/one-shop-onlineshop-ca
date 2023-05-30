@@ -16,7 +16,7 @@ const CartProducts = ({ cartItem }) => {
           <img
             src={imageUrl}
             alt={title}
-            className=" max-w-[80px] rounded-lg "
+            className=" max-w-[100px] rounded-lg "
           />
           <div className="flex flex-col ">
             <h1 className="uppercase pb-4">{title}</h1>
