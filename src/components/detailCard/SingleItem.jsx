@@ -91,13 +91,12 @@ const SingleItem = ({ product }) => {
       </div>
       <ToastContainer
         position="top-right"
-        autoClose={2000}
+        autoClose={1800}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
-        draggable
         pauseOnHover
         theme="dark"
       />
