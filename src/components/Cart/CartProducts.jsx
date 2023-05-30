@@ -31,7 +31,7 @@ const CartProducts = ({ cartItem }) => {
                   className="cursor-pointer w-5 h-full"
                 />
               </div>
-              <div className="font-bold text-1xl text-primary">{amount}</div>
+              <div className="font-bold text-2xl text-primary">{amount}</div>
               <div className="p-2 border bg-violet-100 shadow-xl ">
                 <FaPlus
                   onClick={() => setIncrease(id)}
