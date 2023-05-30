@@ -9,7 +9,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="w-full flex justify-around ">
+      <div className="w-full max-w-4xl mx-auto flex justify-around ">
         <AppLogo />
         <div className="flex  justify-center">
           <Link to="/cart" className="w-full flex justify-between items-center">
