@@ -8,7 +8,7 @@ const CartItems = () => {
   const { cart } = useContext(CartContext);
 
   return (
-    <div>
+    <>
       {/* {cart.map((cartItem) => {
         return <CartProducts key={cartItem.id} cartItem={cartItem} />;
       })} */}
@@ -24,7 +24,7 @@ const CartItems = () => {
           your cart is empty...
         </div>
       )}
-    </div>
+    </>
   );
 };
 
