@@ -60,8 +60,6 @@ const CartProvider = ({ children }) => {
         }
       });
       setCart(newCart);
-
-      console.log(getItemCart());
     } else {
       setCart([...cart, newItem]);
     }
