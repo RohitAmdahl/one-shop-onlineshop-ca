@@ -51,7 +51,6 @@ const CartProvider = ({ children }) => {
     });
     if (cartItem) {
       const newCart = [...cart].map((item) => {
-        console.log(...cart);
         if (item.id === id) {
           return { ...item, amount: cartItem.amount + 1 };
         } else {
