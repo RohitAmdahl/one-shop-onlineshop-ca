@@ -25,17 +25,17 @@ const CartProducts = ({ cartItem }) => {
           <div className="flex flex-col">
             <p className="text-center"> Quantity</p>
             <div className="flex gap-5 pt-4 items-center ">
-              <div>
+              <div className="p-2 border bg-neutral-400">
                 <FaMinus
                   onClick={() => setDecrease(id)}
-                  className="cursor-pointer w-5   h-full bg-green-300"
+                  className="cursor-pointer w-5 h-full"
                 />
               </div>
-              <div className="font-bold  text-1xl text-primary">{amount}</div>
-              <div>
+              <div className="font-bold   text-1xl text-primary">{amount}</div>
+              <div className="p-2 border bg-neutral-400">
                 <FaPlus
                   onClick={() => setIncrease(id)}
-                  className="cursor-pointer w-5 h-full bg-green-300"
+                  className="cursor-pointer w-5 h-full"
                 />
               </div>
             </div>
