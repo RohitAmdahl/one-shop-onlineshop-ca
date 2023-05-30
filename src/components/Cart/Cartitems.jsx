@@ -14,10 +14,12 @@ const CartItems = () => {
       })} */}
       {cart?.length > 0 ? (
         <div className=" mx-auto max-w-4xl ">
-          <ClearCart />
           {cart.map((cartItem) => {
             return <CartProducts key={cartItem.id} cartItem={cartItem} />;
           })}
+          <div>
+            <ClearCart />
+          </div>
         </div>
       ) : (
         <div className="mx-auto text-center text-4xl my-16 font-bold ">
