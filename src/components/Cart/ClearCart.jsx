@@ -23,6 +23,7 @@ const ClearCart = () => {
             className="text-red-600 bg-yellow-400 h-12 w-12 p-2 flex justify-center items-center  mx-8 text-2xl cursor-pointer "
           />
         </div>
+
         <Link
           className="block w-48  select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none border-2 border-primary m-3 "
           type="button"
@@ -35,3 +36,17 @@ const ClearCart = () => {
 };
 
 export default ClearCart;
+
+// {
+//   filteredProducts?.length > 0 ? (
+//     <div className="grid grid-cols-1 gap-10 mx-auto max-w-4xl md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-8">
+//       {filteredProducts.map((product) => {
+//         return <Card key={product.id} product={product} />;
+//       })}
+//     </div>
+//   ) : (
+//     <div className="mx-auto text-center text-4xl font-bold ">
+//       No Products found according to your search.
+//     </div>
+//   );
+// }
