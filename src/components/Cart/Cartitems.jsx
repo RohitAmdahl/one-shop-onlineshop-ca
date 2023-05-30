@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import CartProducts from "./CartProducts";
+import { Link } from "react-router-dom";
+import ClearCart from "./ClearCart";
 
 const CartItems = () => {
   const { cart } = useContext(CartContext);
@@ -15,6 +17,7 @@ const CartItems = () => {
           {cart.map((cartItem) => {
             return <CartProducts key={cartItem.id} cartItem={cartItem} />;
           })}
+          <ClearCart />
         </div>
       ) : (
         <div className="mx-auto text-center text-4xl my-16 font-bold ">
