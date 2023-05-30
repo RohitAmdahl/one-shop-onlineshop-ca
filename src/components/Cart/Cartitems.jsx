@@ -9,9 +9,6 @@ const CartItems = () => {
 
   return (
     <>
-      {/* {cart.map((cartItem) => {
-        return <CartProducts key={cartItem.id} cartItem={cartItem} />;
-      })} */}
       {cart?.length > 0 ? (
         <div className=" mx-auto max-w-4xl ">
           {cart.map((cartItem) => {
@@ -22,8 +19,8 @@ const CartItems = () => {
           </div>
         </div>
       ) : (
-        <div className="mx-auto text-center text-4xl my-16 font-bold ">
-          your cart is empty...
+        <div className="mx-auto text-center text-4xl my-16 mb-16 font-bold ">
+          <h1>your cart is empty...</h1>
         </div>
       )}
     </>
