@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { RiDeleteBin2Line } from "react-icons/ri";
@@ -36,17 +36,3 @@ const ClearCart = () => {
 };
 
 export default ClearCart;
-
-// {
-//   filteredProducts?.length > 0 ? (
-//     <div className="grid grid-cols-1 gap-10 mx-auto max-w-4xl md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-8">
-//       {filteredProducts.map((product) => {
-//         return <Card key={product.id} product={product} />;
-//       })}
-//     </div>
-//   ) : (
-//     <div className="mx-auto text-center text-4xl font-bold ">
-//       No Products found according to your search.
-//     </div>
-//   );
-// }
