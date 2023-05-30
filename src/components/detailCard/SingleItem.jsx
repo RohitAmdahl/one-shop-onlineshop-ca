@@ -89,17 +89,7 @@ const SingleItem = ({ product }) => {
           {/* </Link> */}
         </div>
       </div>
-      <ToastContainer
-        position="top-right"
-        autoClose={1800}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        pauseOnHover
-        theme="dark"
-      />
+      <ToastContainer theme="dark" />
     </section>
   );
 };
