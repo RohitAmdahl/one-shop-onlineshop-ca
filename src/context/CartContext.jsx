@@ -30,14 +30,14 @@ const CartProvider = ({ children }) => {
     setTotal(total);
   }, [cart]);
   // local storage adding products to localstorge
-  const getItemCart = () => {
-    const newCartData = localStorage.getItem("cartItem");
-    if (newCartData === []) {
-      return [];
-    } else {
-      return JSON.parse(newCartData);
-    }
-  };
+  // const getItemCart = () => {
+  //   const newCartData = localStorage.getItem("cartItem");
+  //   if (newCartData === []) {
+  //     return [];
+  //   } else {
+  //     return JSON.parse(newCartData);
+  //   }
+  // };
   // seetitem cart
   useEffect(() => {
     localStorage.setItem("cartItem", JSON.stringify([cart]));

@@ -8,7 +8,7 @@ import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 
 const SingleItem = ({ product }) => {
-  const cart = () => {
+  const AddToCart = () => {
     addToCart(product, id);
     toast.success("added to cart");
   };
@@ -84,7 +84,7 @@ const SingleItem = ({ product }) => {
         <div className="p-6 pt-0 my-4 ">
           {/* <Link to="/cart"> */}
           <button
-            onClick={cart}
+            onClick={AddToCart}
             className="block w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none border-2 border-primary "
           >
             Add to Cart
