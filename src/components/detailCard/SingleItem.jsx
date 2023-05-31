@@ -10,7 +10,7 @@ import { useContext } from "react";
 const SingleItem = ({ product }) => {
   const AddToCart = () => {
     addToCart(product, id);
-    toast.success("added to cart");
+    toast.success(" Product added to cart");
   };
 
   const { addToCart } = useContext(CartContext);
