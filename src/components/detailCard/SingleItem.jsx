@@ -91,9 +91,8 @@ const SingleItem = ({ product }) => {
           </div>
         </div>
       </section>
-      <div>
-        <ToastContainer theme="dark" />
-      </div>
+
+      <ToastContainer theme="dark" />
     </>
   );
 };
