@@ -89,7 +89,7 @@ const SingleItem = ({ product }) => {
           {/* </Link> */}
         </div>
       </div>
-      <ToastContainer theme="dark" />
+      <ToastContainer />
     </section>
   );
 };
