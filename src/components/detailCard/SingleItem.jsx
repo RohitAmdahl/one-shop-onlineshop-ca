@@ -3,6 +3,7 @@ import FormatPrice from "../../helper/FormatPrice";
 import Review from "../../helper/Review";
 import RatingsIcons from "../../helper/RatingsIcons";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 
@@ -48,7 +49,6 @@ const SingleItem = ({ product }) => {
         <div className="py-2 my-3">
           <div className="flex  flex-col py-2">
             <h2 className=" font-medium ">Price</h2>
-
             <div className=" flex justify-between gap-8 font-sans text-base font-medium leading-relaxed antialiased text-primary ">
               {<FormatPrice price={discountedPrice} />}
               <del className=" font-sans text-sm font-normal leading-normal  antialiased py-1 text-red-600  ">
@@ -89,7 +89,7 @@ const SingleItem = ({ product }) => {
           {/* </Link> */}
         </div>
       </div>
-      <ToastContainer />
+      <ToastContainer theme="dark" />
     </section>
   );
 };
