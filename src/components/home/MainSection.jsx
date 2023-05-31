@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const MainSection = () => {
   return (
     <>
-      <div className="max-w-xl mx-auto text-fontcolor">
+      <div className="max-w-xl mx-auto text-fontcolor m-5">
         <p className=" font-pins container mx-auto text-center p-1 text-textColor ">
           For members : free shipping over 300nok any location in Norway.
         </p>

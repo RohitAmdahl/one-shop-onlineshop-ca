@@ -2,7 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "../../helper/Schema";
-import submitForm from "../../helper/Schema";
+
+function onSubmit(data) {
+  console.log(data);
+}
+
 const ValidForm = () => {
   const {
     register,
@@ -18,7 +22,7 @@ const ValidForm = () => {
         <h1 className="text-2xl font-bold text-center py-3">Contact Us</h1>
       </div>
       <form
-        onSubmit={handleSubmit(submitForm)}
+        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col justify-center"
       >
         <input

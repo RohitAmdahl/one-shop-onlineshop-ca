@@ -40,7 +40,7 @@ const SpecificPage = () => {
     return <div>Error</div>;
   }
 
-  return <SingleItem product={product} />;
+  return <SingleItem key={product.id} product={product} />;
 };
 
 export default SpecificPage;

@@ -1,9 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
-
 // create context
-
 export const ProductContext = createContext();
-
 // ProductProvider for app  always good to pass children and needs value if we do not pass then we will get error.
 const url = `https://api.noroff.dev/api/v1/online-shop/`;
 console.log(url);
