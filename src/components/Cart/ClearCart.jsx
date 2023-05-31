@@ -1,10 +1,17 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import CartItems from "./Cartitems";
 
 const ClearCart = () => {
+  let CheckOutpage = useNavigate();
+  const routeChange = () => {
+    let path = `/checkout`;
+    CheckOutpage(path);
+    clearCart();
+  };
+
   const { clearCart, total } = useContext(CartContext);
   const { id } = CartItems;
   return (
@@ -25,13 +32,12 @@ const ClearCart = () => {
         </div>
 
         <div className="border-b-2 w-full flex justify-center item-center ">
-          <Link
-            to="/checkout"
+          <button
             className="block w-48  select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none border-2 border-primary m-3 "
-            type="button"
+            onClick={routeChange}
           >
             Checkout
-          </Link>
+          </button>
         </div>
         <div className="border-b-2 w-full flex justify-center item-center ">
           <Link
