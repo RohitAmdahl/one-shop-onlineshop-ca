@@ -30,14 +30,15 @@ const CartProvider = ({ children }) => {
     setTotal(total);
   }, [cart]);
   // local storage adding products to localstorge
-  // const getItemCart = () => {
-  //   const newCartData = localStorage.getItem("cartItem");
-  //   if (newCartData === []) {
-  //     return [];
-  //   } else {
-  //     return JSON.parse(newCartData);
-  //   }
-  // };
+  const getItemCart = () => {
+    const cart = localStorage.getItem("cartItem");
+    if (cart === []) {
+      return [];
+    } else {
+      return JSON.parse(cart);
+    }
+  };
+  console.log(cart);
   // seetitem cart
   useEffect(() => {
     localStorage.setItem("cartItem", JSON.stringify([cart]));
@@ -45,6 +46,7 @@ const CartProvider = ({ children }) => {
 
   // add to cart
   const addToCart = (product, id) => {
+    getItemCart();
     const newItem = { ...product, amount: 1 };
     // checking item if its alredy in cart
     const cartItem = cart.find((item) => {

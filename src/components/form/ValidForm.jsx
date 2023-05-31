@@ -2,9 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "../../helper/Schema";
+import { ToastContainer, toast } from "react-toastify";
 
 function onSubmit(data) {
   console.log(data);
+  toast.success("form successfully submitted");
 }
 
 const ValidForm = () => {
@@ -68,6 +70,7 @@ const ValidForm = () => {
           className=" lg:text-md md:text-md block  select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none border-2 border-primary my-3"
         />
       </form>
+      <ToastContainer theme="dark" />
     </div>
   );
 };

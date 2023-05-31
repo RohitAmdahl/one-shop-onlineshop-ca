@@ -3,7 +3,7 @@ import FormatPrice from "../../helper/FormatPrice";
 import Review from "../../helper/Review";
 import RatingsIcons from "../../helper/RatingsIcons";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 
