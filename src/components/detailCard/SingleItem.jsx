@@ -88,11 +88,10 @@ const SingleItem = ({ product }) => {
               Add to Cart
             </button>
             {/* </Link> */}
+            <ToastContainer theme="dark" />
           </div>
         </div>
       </section>
-
-      <ToastContainer theme="dark" />
     </>
   );
 };
