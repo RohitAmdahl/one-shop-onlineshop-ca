@@ -1,27 +1,20 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import { RiDeleteBin2Line } from "react-icons/ri";
-import CartItems from "./Cartitems";
 
 const ClearCart = () => {
-  const { clearCart, total } = useContext(CartContext);
-  const { id } = CartItems;
+  const { total } = useContext(CartContext);
+
   return (
     <div className="flex justify-center items-center">
       <div className=" flex justify-center items-center flex-wrap gap-10 max-w-lg container mx-auto py-16">
-        <div className=" flex w-full justify-between items-center gap-3 text-lg ">
-          <div className="flex ml-2 uppercase">
+        <div className=" flex justify-center w-full text-center gap-3 text-lg ">
+          <div className=" text-center ml-2 uppercase">
             Total:
             <span className=" text-xl ml-5">
               {parseFloat(total).toFixed(2)} Nok
             </span>
           </div>
-
-          <RiDeleteBin2Line
-            onClick={() => clearCart(id)}
-            className="text-red-600 bg-yellow-400 h-12 w-12 p-2 flex justify-center items-center  mx-8 text-2xl cursor-pointer "
-          />
         </div>
 
         <div className="border-b-2 w-full flex justify-center item-center ">
