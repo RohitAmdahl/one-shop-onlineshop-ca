@@ -9,6 +9,8 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   // amount state
   const [itemAmount, setItemAmount] = useState(0);
+  // total price in cart page state
+  const [total, setTotal] = useState(0);
 
   // update item in navbar
   useEffect(() => {
@@ -20,8 +22,6 @@ const CartProvider = ({ children }) => {
     }
   }, [cart]);
 
-  // total price in cart page state
-  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const total = cart.reduce((acc, item) => {
