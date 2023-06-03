@@ -1,6 +1,14 @@
 import React, { useEffect } from "react";
 import { createContext, useState } from "react";
-
+  // local storage adding products to localstorge
+  const getItemCart = () => {
+    const cart = localStorage.getItem("cartItem");
+    if (cart === []) {
+      return [];
+    } else {
+      return JSON.parse(cart);
+    }
+  };
 // create context
 export const CartContext = createContext();
 // create provider with function
@@ -29,15 +37,7 @@ const CartProvider = ({ children }) => {
     }, 0);
     setTotal(total);
   }, [cart]);
-  // local storage adding products to localstorge
-  const getItemCart = () => {
-    const cart = localStorage.getItem("cartItem");
-    if (cart === []) {
-      return [];
-    } else {
-      return JSON.parse(cart);
-    }
-  };
+
   console.log(cart);
   // seetitem cart
   useEffect(() => {
