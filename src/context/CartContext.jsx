@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { createContext, useState } from "react";
   // local storage adding products to localstorge
-  const getItemCart = () => {
+  const getItemCart = () => { 
     const cart = localStorage.getItem("cartItem");
     if (cart === []) {
       return [];
