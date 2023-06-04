@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import { RiDeleteBin2Line } from "react-icons/ri";
 
 const ClearCart = () => {
-  const { total } = useContext(CartContext);
+  const { total, clearCart } = useContext(CartContext);
 
   return (
     <div className="flex justify-center items-center">
@@ -13,7 +14,12 @@ const ClearCart = () => {
             Total:
             <span className=" text-xl ml-5">
               {parseFloat(total).toFixed(2)} Nok
+               <RiDeleteBin2Line
+              onClick={clearCart}
+              className="text-red-600  items-center text-2xl cursor-pointer  "
+            />
             </span>
+           
           </div>
         </div>
 

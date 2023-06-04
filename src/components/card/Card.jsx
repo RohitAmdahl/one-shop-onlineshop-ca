@@ -1,6 +1,5 @@
 import React from "react";
 import FormatPrice from "../../helper/FormatPrice";
-
 import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
