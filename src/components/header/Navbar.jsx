@@ -24,17 +24,32 @@ const NavBar = () => {
         <div className="flex container mx-auto justify-around p-2">
           <ul className=" flex justify-between  gap-8 ">
             <li className="p-2 hover:text-indigo-800 hover:underline font-medium">
-              <NavLink className="font-semibold text-lg" to="/">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive && "font-bold text-lg underline-offset-4 "
+                }
+                to="/"
+              >
                 Home
               </NavLink>
             </li>
             <li className="p-2  hover:text-indigo-800 hover:underline font-medium  ">
-              <NavLink className="font-semibold text-lg" to="/product">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive && "font-bold text-lg underline-offset-4"
+                }
+                to="/product"
+              >
                 Products
               </NavLink>
             </li>
             <li className="p-2 hover:text-indigo-800 hover:underline font-medium ">
-              <NavLink className="font-semibold text-lg" to="/contact">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive && "font-bold text-lg underline-offset-4 "
+                }
+                to="/contact"
+              >
                 Contact
               </NavLink>
             </li>

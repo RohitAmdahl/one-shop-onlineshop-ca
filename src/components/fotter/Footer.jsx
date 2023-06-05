@@ -12,7 +12,9 @@ const Footer = () => {
           <p> &copy; Rohit.K.A {year}</p>
         </div>
         <div className=" capitalize text-center py-2 ">
-           <p className=" text-amber-950 "> Build with create react App,tailwind CSS </p>
+          <p className=" text-amber-950 ">
+            Build with create react App,tailwind CSS
+          </p>
         </div>
       </footer>
     </>

@@ -1,6 +1,5 @@
 import React from "react";
 import ModelPic from "../../pictures/modelsPic.jpg";
-import { NavLink } from "react-router-dom";
 
 const MainSection = () => {
   return (
