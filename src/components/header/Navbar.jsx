@@ -26,7 +26,7 @@ const NavBar = () => {
             <li className="p-2 hover:text-indigo-800 hover:underline font-medium">
               <NavLink
                 className={({ isActive }) =>
-                  isActive && "font-bold text-lg underline-offset-4 "
+                  isActive && "font-bold text-lg underline"
                 }
                 to="/"
               >
@@ -36,7 +36,7 @@ const NavBar = () => {
             <li className="p-2  hover:text-indigo-800 hover:underline font-medium  ">
               <NavLink
                 className={({ isActive }) =>
-                  isActive && "font-bold text-lg underline-offset-4"
+                  isActive && "font-bold text-lg underline"
                 }
                 to="/product"
               >
@@ -46,7 +46,7 @@ const NavBar = () => {
             <li className="p-2 hover:text-indigo-800 hover:underline font-medium ">
               <NavLink
                 className={({ isActive }) =>
-                  isActive && "font-bold text-lg underline-offset-4 "
+                  isActive && "font-bold text-lg underline "
                 }
                 to="/contact"
               >
