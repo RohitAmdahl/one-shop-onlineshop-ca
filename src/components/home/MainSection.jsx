@@ -1,5 +1,5 @@
 import React from "react";
-// import ModelPic from "../../pictures/modelsPic.jpg";
+import ModelPic from "../../pictures/modelsPic.jpg";
 import { NavLink } from "react-router-dom";
 
 const MainSection = () => {
@@ -9,9 +9,9 @@ const MainSection = () => {
         <p className=" font-pins container mx-auto text-center p-1 text-textColor ">
           For members : free shipping over 300nok any location in Norway.
         </p>
-        {/* <div>
+        <div>
           <img src={ModelPic} alt="Modelpicture" />
-        </div> */}
+        </div>
         <div className="m-5 flex justify-center items-center">
           <NavLink
             to="/product"
