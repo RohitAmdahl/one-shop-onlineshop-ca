@@ -20,8 +20,8 @@ const NavBar = () => {
           </Link>
         </div>
       </div>
-      <nav className="flex bg-yellow-100">
-        <div className="flex container mx-auto justify-around   ">
+      <nav className="flex bg-yellow-100 max-w-2xl container mx-auto shadow-sm rounded-full">
+        <div className="flex container mx-auto justify-around p-2">
           <ul className=" flex justify-between  gap-8 ">
             <li className="p-2 hover:text-indigo-800 hover:underline font-medium">
               <NavLink className="font-semibold text-lg" to="/">
