@@ -10,16 +10,15 @@ const ClearCart = () => {
     <div className="flex justify-center items-center">
       <div className=" flex justify-center items-center flex-wrap gap-10 max-w-lg container mx-auto py-16">
         <div className=" flex justify-center w-full text-center gap-3 text-lg ">
-          <div className=" text-center ml-2 uppercase">
+          <div className=" text-center ml-2 uppercase flex justify-center items-center gap-5 ">
             Total:
-            <span className=" text-xl ml-5">
+            <span className=" text-xl ml-5 w-full flex gap-4 justify-center items-center">
               {parseFloat(total).toFixed(2)} Nok
-               <RiDeleteBin2Line
-              onClick={clearCart}
-              className="text-red-600  items-center text-2xl cursor-pointer  "
-            />
+              <RiDeleteBin2Line
+                onClick={clearCart}
+                className="text-red-600 w-10 h-12 bg-yellow-200 p-1 border items-center text-2xl cursor-pointer  "
+              />
             </span>
-           
           </div>
         </div>
 

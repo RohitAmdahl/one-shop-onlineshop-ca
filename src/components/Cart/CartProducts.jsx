@@ -4,7 +4,7 @@ import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { CartContext } from "../../context/CartContext";
-// import ClearCart from "./ClearCart";
+
 const CartProducts = ({ cartItem }) => {
   const { removeFromCart, setIncrease, setDecrease } = useContext(CartContext);
 
@@ -49,7 +49,6 @@ const CartProducts = ({ cartItem }) => {
           </div>
         </div>
       </div>
-      {/* <ClearCart /> */}
     </>
   );
 };
