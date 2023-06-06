@@ -8,6 +8,12 @@ const CheckOutProduct = () => {
 
   return (
     <>
+      <div className=" bg-gray-200 rounded-xl  max-w-md container mx-auto text-center  uppercase flex justify-center items-center">
+        Total:
+        <span className="text-xl ml-5 p-2 text-center flex gap-4 justify-center items-center">
+          {parseFloat(total).toFixed(2)} Nok
+        </span>
+      </div>
       {cart?.length > 0 ? (
         <div className=" mx-auto max-w-4xl ">
           {cart.map((CheckOutCardItem) => {
@@ -24,12 +30,6 @@ const CheckOutProduct = () => {
           <h1>your cart is empty...</h1>
         </div>
       )}
-      <div className=" text-center ml-2 uppercase flex justify-center items-center gap-5 ">
-        Total:
-        <span className="  text-xl ml-5 w-full flex gap-4 justify-center items-center">
-          {parseFloat(total).toFixed(2)} Nok
-        </span>
-      </div>
     </>
   );
 };
