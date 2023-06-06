@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /*  */
+/* * {
+  outline: 2px solid red;
+} */
 .isActive {
   /*this is active class for */
 }
