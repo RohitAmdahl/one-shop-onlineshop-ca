@@ -1,17 +1,22 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import CartProducts from "../Cart/CartProducts";
-// import { Link } from "react-router-dom";
+
+import CheckOutCard from "./CheckOutCard";
 
 const CheckOutProduct = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, total } = useContext(CartContext);
 
   return (
     <>
       {cart?.length > 0 ? (
         <div className=" mx-auto max-w-4xl ">
-          {cart.map((cartItem) => {
-            return <CartProducts key={cartItem.id} cartItem={cartItem} />;
+          {cart.map((CheckOutCardItem) => {
+            return (
+              <CheckOutCard
+                key={CheckOutCardItem.id}
+                CheckOutCardItem={CheckOutCardItem}
+              />
+            );
           })}
         </div>
       ) : (
@@ -19,6 +24,12 @@ const CheckOutProduct = () => {
           <h1>your cart is empty...</h1>
         </div>
       )}
+      <div className=" text-center ml-2 uppercase flex justify-center items-center gap-5 ">
+        Total:
+        <span className=" text-xl ml-5 w-full flex gap-4 justify-center items-center">
+          {parseFloat(total).toFixed(2)} Nok
+        </span>
+      </div>
     </>
   );
 };
