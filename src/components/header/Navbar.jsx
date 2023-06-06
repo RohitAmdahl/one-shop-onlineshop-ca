@@ -25,9 +25,10 @@ const NavBar = () => {
           <ul className=" flex justify-between  gap-8 ">
             <li className="p-2 hover:text-indigo-800 hover:underline font-medium">
               <NavLink
-                className={({ isActive }) =>
-                  isActive && "font-bold text-lg underline"
-                }
+                // className={({ isActive }) =>
+                //   isActive &&
+                // }
+                className={"font-bold text-lg underline"}
                 to="/"
               >
                 Home
@@ -35,9 +36,10 @@ const NavBar = () => {
             </li>
             <li className="p-2  hover:text-indigo-800 hover:underline font-medium  ">
               <NavLink
-                className={({ isActive }) =>
-                  isActive && "font-bold text-lg underline"
-                }
+                // className={({ isActive }) =>
+                //   isActive && "font-bold text-lg underline"
+                // }
+                className={"font-bold text-lg underline"}
                 to="/product"
               >
                 Products
@@ -45,9 +47,10 @@ const NavBar = () => {
             </li>
             <li className="p-2 hover:text-indigo-800 hover:underline font-medium ">
               <NavLink
-                className={({ isActive }) =>
-                  isActive && "font-bold text-lg underline "
-                }
+                // className={({ isActive }) =>
+                //   isActive && "font-bold text-lg underline "
+                // }
+                className={"font-bold text-lg underline"}
                 to="/contact"
               >
                 Contact
