@@ -26,7 +26,7 @@ const CheckOutProduct = () => {
       )}
       <div className=" text-center ml-2 uppercase flex justify-center items-center gap-5 ">
         Total:
-        <span className=" text-xl ml-5 w-full flex gap-4 justify-center items-center">
+        <span className="  text-xl ml-5 w-full flex gap-4 justify-center items-center">
           {parseFloat(total).toFixed(2)} Nok
         </span>
       </div>

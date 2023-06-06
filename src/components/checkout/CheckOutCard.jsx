@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import FormatPrice from "../../helper/FormatPrice";
 
-import { CartContext } from "../../context/CartContext";
-
 const CheckOutCard = ({ CheckOutCardItem }) => {
-  const { id, title, discountedPrice, imageUrl, amount } = CheckOutCardItem;
+  const { title, discountedPrice, imageUrl, amount } = CheckOutCardItem;
 
   return (
     <>
