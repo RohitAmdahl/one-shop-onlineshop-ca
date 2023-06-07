@@ -92,7 +92,7 @@ const CartProvider = ({ children }) => {
       });
       saveCart(newCart);
     }
-    if (cartItem.amount < 2) {
+    if (cartItem.amount < 1) {
       removeFromCart(id);
     }
   };
