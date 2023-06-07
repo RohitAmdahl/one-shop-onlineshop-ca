@@ -13,7 +13,7 @@ const getItemCart = () => {
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(getItemCart());
+  const [cart, setCart] = useState(getItemCart(), []);
   const [itemAmount, setItemAmount] = useState(0);
   const [total, setTotal] = useState(0);
 
