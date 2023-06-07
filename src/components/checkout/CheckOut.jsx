@@ -24,6 +24,7 @@ const CheckOut = () => {
   const [firstName, setFirstName] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
+  const [cvv, setCvv] = useState("");
   const [creditCard, setCreditCard] = useState("");
   const [inputError, setInputError] = useState();
   const [emailErr, setEmailErr] = useState();
@@ -34,6 +35,9 @@ const CheckOut = () => {
   }
   function onChangeAddress(event) {
     setAddress(event.target.value);
+  }
+  function onChangeCvv(event) {
+    setCvv(event.target.value);
   }
 
   function onChangeEmail(event) {
@@ -100,6 +104,14 @@ const CheckOut = () => {
           required
         />
         {inputError && <p className="text-blue-500">{inputError}</p>}
+
+        <input
+          className="border border-primary p-2 m-2 rounded-md "
+          value={cvv}
+          placeholder=" cvv number 3digits,  xxx "
+          onChange={onChangeCvv}
+          required
+        />
 
         <div className="border-b-2 my-5 py-5 w-full flex justify-center item-center ">
           <input
