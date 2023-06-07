@@ -27,7 +27,9 @@ const CartProvider = ({ children }) => {
       const amount = cart.reduce((acc, currentItem) => {
         return acc + currentItem.amount;
       }, 0);
+      console.log(amount);
       setItemAmount(amount);
+      console.log(setItemAmount(amount));
     }
   }, [cart]);
 
@@ -72,15 +74,16 @@ const CartProvider = ({ children }) => {
   const clearCart = () => {
     saveCart([]);
   };
-
   // setIncrease amount with id and amount
   const setIncrease = (id) => {
     const cartItem = cart.find((item) => item.id === id);
     addToCart(cartItem, id);
   };
+
   // setDecrease with id and amount
   const setDecrease = (id) => {
     const cartItem = cart.find((item) => item.id === id);
+
     addToCart(cartItem, id);
     if (cartItem) {
       const newCart = cart.map((item) => {
@@ -92,9 +95,11 @@ const CartProvider = ({ children }) => {
       });
       saveCart(newCart);
     }
-    if (cartItem.amount < 2) {
+    if (cartItem.amount < 1) {
       removeFromCart(id);
     }
+    console.log(cartItem);
+    console.log(removeFromCart(id));
   };
 
   return (
