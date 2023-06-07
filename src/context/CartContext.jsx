@@ -1,35 +1,32 @@
 import React, { useEffect } from "react";
 import { createContext, useState } from "react";
-
+// local storage adding products to local storage but i have tried alot code works but some problm i face when header cart icon gives NAN , and clear cart does not remove the cart item in header cart icon, i need to rersh my page to see 0 item , code is under i comment it out, cart - v1
 const getItemCart = () => {
   const cart = localStorage.getItem("cartItem");
-  if (!cart) {
+  if (cart === []) {
     return [];
   } else {
     return JSON.parse(cart);
   }
 };
-
+// create context
 export const CartContext = createContext();
-
+// create provider with function
 const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(getItemCart(), []);
+  // cart state
+  const [cart, setCart] = useState([]);
+  // amount state
   const [itemAmount, setItemAmount] = useState(0);
+  // total price in cart page state
   const [total, setTotal] = useState(0);
 
-  const saveCart = (cart) => {
-    setCart(cart);
-    localStorage.setItem("cartItem", JSON.stringify(cart));
-  };
-
+  // update item in navbar
   useEffect(() => {
-    if (cart.length > 0) {
+    if (cart) {
       const amount = cart.reduce((acc, currentItem) => {
         return acc + currentItem.amount;
       }, 0);
-      console.log(amount);
       setItemAmount(amount);
-      console.log(setItemAmount(amount));
     }
   }, [cart]);
 
@@ -40,11 +37,17 @@ const CartProvider = ({ children }) => {
     setTotal(total);
   }, [cart]);
 
+  console.log(cart);
+  // set item cart
+  useEffect(() => {
+    localStorage.setItem("cartItem", JSON.stringify([cart]));
+  }, [cart]);
+
   // add to cart
   const addToCart = (product, id) => {
-    // getItemCart();
+    getItemCart();
     const newItem = { ...product, amount: 1 };
-    // checking item if its already in cart
+    // checking item if its alredy in cart
     const cartItem = cart.find((item) => {
       return item.id === id;
     });
@@ -56,9 +59,9 @@ const CartProvider = ({ children }) => {
           return item;
         }
       });
-      saveCart(newCart);
+      setCart(newCart);
     } else {
-      saveCart([...cart, newItem]);
+      setCart([...cart, newItem]);
     }
   };
 
@@ -67,23 +70,23 @@ const CartProvider = ({ children }) => {
     const newCart = cart.filter((item) => {
       return item.id !== id;
     });
-    saveCart(newCart);
+    setCart(newCart);
   };
 
   // clear cart
   const clearCart = () => {
-    saveCart([]);
+    setCart([]);
   };
+
   // setIncrease amount with id and amount
   const setIncrease = (id) => {
     const cartItem = cart.find((item) => item.id === id);
     addToCart(cartItem, id);
   };
-
   // setDecrease with id and amount
+
   const setDecrease = (id) => {
     const cartItem = cart.find((item) => item.id === id);
-
     addToCart(cartItem, id);
     if (cartItem) {
       const newCart = cart.map((item) => {
@@ -93,13 +96,11 @@ const CartProvider = ({ children }) => {
           return item;
         }
       });
-      saveCart(newCart);
+      setCart(newCart);
     }
-    if (cartItem.amount < 1) {
+    if (cartItem.amount < 2) {
       removeFromCart(id);
     }
-    console.log(cartItem);
-    console.log(removeFromCart(id));
   };
 
   return (
@@ -121,35 +122,40 @@ const CartProvider = ({ children }) => {
 };
 export default CartProvider;
 
+// cart - v1 ; code with local storage
+
 // import React, { useEffect } from "react";
 // import { createContext, useState } from "react";
-// // local storage adding products to localstorge
+
 // const getItemCart = () => {
 //   const cart = localStorage.getItem("cartItem");
-//   if (cart === []) {
+//   if (!cart) {
 //     return [];
 //   } else {
 //     return JSON.parse(cart);
 //   }
 // };
-// // create context
+
 // export const CartContext = createContext();
-// // create provider with function
+
 // const CartProvider = ({ children }) => {
-//   // cart state
-//   const [cart, setCart] = useState([]);
-//   // amount state
+//   const [cart, setCart] = useState(getItemCart(), []);
 //   const [itemAmount, setItemAmount] = useState(0);
-//   // total price in cart page state
 //   const [total, setTotal] = useState(0);
 
-//   // update item in navbar
+//   const saveCart = (cart) => {
+//     setCart(cart);
+//     localStorage.setItem("cartItem", JSON.stringify(cart));
+//   };
+
 //   useEffect(() => {
-//     if (cart) {
+//     if (cart.length > 0) {
 //       const amount = cart.reduce((acc, currentItem) => {
 //         return acc + currentItem.amount;
 //       }, 0);
+//       console.log(amount);
 //       setItemAmount(amount);
+//       console.log(setItemAmount(amount));
 //     }
 //   }, [cart]);
 
@@ -160,17 +166,11 @@ export default CartProvider;
 //     setTotal(total);
 //   }, [cart]);
 
-//   console.log(cart);
-//   // set item cart
-//   useEffect(() => {
-//     localStorage.setItem("cartItem", JSON.stringify([cart]));
-//   }, [cart]);
-
 //   // add to cart
 //   const addToCart = (product, id) => {
-//     getItemCart();
+//     // getItemCart();
 //     const newItem = { ...product, amount: 1 };
-//     // checking item if its alredy in cart
+//     // checking item if its already in cart
 //     const cartItem = cart.find((item) => {
 //       return item.id === id;
 //     });
@@ -182,9 +182,9 @@ export default CartProvider;
 //           return item;
 //         }
 //       });
-//       setCart(newCart);
+//       saveCart(newCart);
 //     } else {
-//       setCart([...cart, newItem]);
+//       saveCart([...cart, newItem]);
 //     }
 //   };
 
@@ -193,23 +193,23 @@ export default CartProvider;
 //     const newCart = cart.filter((item) => {
 //       return item.id !== id;
 //     });
-//     setCart(newCart);
+//     saveCart(newCart);
 //   };
 
 //   // clear cart
 //   const clearCart = () => {
-//     setCart([]);
+//     saveCart([]);
 //   };
-
 //   // setIncrease amount with id and amount
 //   const setIncrease = (id) => {
 //     const cartItem = cart.find((item) => item.id === id);
 //     addToCart(cartItem, id);
 //   };
-//   // setDecrease with id and amount
 
+//   // setDecrease with id and amount
 //   const setDecrease = (id) => {
 //     const cartItem = cart.find((item) => item.id === id);
+
 //     addToCart(cartItem, id);
 //     if (cartItem) {
 //       const newCart = cart.map((item) => {
@@ -219,11 +219,13 @@ export default CartProvider;
 //           return item;
 //         }
 //       });
-//       setCart(newCart);
+//       saveCart(newCart);
 //     }
-//     if (cartItem.amount < 2) {
+//     if (cartItem.amount < 1) {
 //       removeFromCart(id);
 //     }
+//     console.log(cartItem);
+//     console.log(removeFromCart(id));
 //   };
 
 //   return (
