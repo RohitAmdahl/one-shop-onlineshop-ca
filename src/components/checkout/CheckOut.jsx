@@ -53,9 +53,9 @@ const CheckOut = () => {
     const reGexNumber = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
     setCreditCard(event.target.value);
     if (reGexNumber.test(creditCard)) {
-      setInputError("Input card is valid ");
+      setInputError("creditCard is valid ");
     } else if (!reGexNumber.test(creditCard) && creditCard === "") {
-      setInputError("Your card is invalid");
+      setInputError("creditCard is invalid");
     } else {
       setInputError("");
     }
