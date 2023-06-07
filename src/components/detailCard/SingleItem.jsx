@@ -35,18 +35,28 @@ const SingleItem = ({ product }) => {
   };
   return (
     <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-4xl md:max-w-xl md:flex md:flex-col">
-      <div className=" max-w-xl mx-auto p-10">
-        {product.discountedPrice && (
+      <div className=" max-w-2xl mx-auto p-6">
+        {/* {product.discountedPrice && (
           <p className="bg-red-500 text-white p-2 text-center rounded-full  w-2/5 ">
             - {discount()}% off
           </p>
-        )}
-        <img
+        )} */}
+        {/* <img
           src={imageUrl}
           alt={title}
           className=" container mx-auto rounded-lg max-w-xs py-5 m-2 md:max-w-sm  lg:max-w-sm p-10 md:p-2"
-        />
+        /> */}
         <div className="flex flex-col p-3">
+          {product.discountedPrice && (
+            <p className="bg-red-500 text-white p-2 text-center rounded-full w-2/5 ">
+              - {discount()}% off
+            </p>
+          )}
+          <img
+            src={imageUrl}
+            alt={title}
+            className=" container mx-auto rounded-lg max-w-xs py-5 m-2 md:max-w-sm  lg:max-w-sm p-10 md:p-2"
+          />
           <h1 className="w-full font-bold text-center border-b-2 py-5 lg:text-2xl md:text-1xl ">
             {title}
           </h1>
