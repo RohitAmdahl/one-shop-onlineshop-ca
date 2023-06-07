@@ -37,10 +37,8 @@ const CartProvider = ({ children }) => {
     }, 0);
     setTotal(total);
   }, [cart]);
-
   // add to cart
   const addToCart = (product, id) => {
-    // getItemCart();
     const newItem = { ...product, amount: 1 };
     // checking item if its already in cart
     const cartItem = cart.find((item) => {
@@ -69,7 +67,6 @@ const CartProvider = ({ children }) => {
     const amount = newCart.reduce((acc, currentItem) => {
       return acc + currentItem.amount;
     }, 0);
-
     setItemAmount(amount);
   };
 
@@ -101,7 +98,7 @@ const CartProvider = ({ children }) => {
       });
       saveCart(newCart);
 
-      // Update itemAmount here help from teacher Jan
+      // Update itemAmount
       const amount = newCart.reduce((acc, currentItem) => {
         return acc + currentItem.amount;
       }, 0);

@@ -34,7 +34,7 @@ const SingleItem = ({ product }) => {
     return 0;
   };
   return (
-    <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-4xl md:max-w-xl md:flex">
+    <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-4xl md:max-w-xl md:flex md:flex-col">
       <div className="max-w-xl mx-auto p-10">
         {product.discountedPrice && (
           <p className="bg-red-500 text-white p-2 text-center rounded-full  w-2/5 ">
