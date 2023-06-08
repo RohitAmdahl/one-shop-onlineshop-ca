@@ -36,20 +36,10 @@ const SingleItem = ({ product }) => {
   return (
     <section className=" container mx-auto gap-6 font-pins py-3 text-fontcolor lg:flex lg:max-w-4xl md:max-w-xl md:flex md:flex-col">
       <div className=" max-w-2xl mx-auto p-6">
-        {/* {product.discountedPrice && (
-          <p className="bg-red-500 text-white p-2 text-center rounded-full  w-2/5 ">
-            - {discount()}% off
-          </p>
-        )} */}
-        {/* <img
-          src={imageUrl}
-          alt={title}
-          className=" container mx-auto rounded-lg max-w-xs py-5 m-2 md:max-w-sm  lg:max-w-sm p-10 md:p-2"
-        /> */}
         <div className="flex flex-col p-3">
-          {product.discountedPrice && (
+          {product.discountedPrice && discountedPrice < price && (
             <p className="bg-red-500 text-white p-2 text-center rounded-full w-2/5 ">
-              - {discount()}% off
+              {discount()}% off
             </p>
           )}
           <img
@@ -76,7 +66,7 @@ const SingleItem = ({ product }) => {
             </div>
             <div className="flex gap-5 justify-between  py-2">
               <h2 className=" font-medium ">Rating</h2>
-              <div className="flex">
+              <div className="flex w-full  ">
                 <RatingsIcons rating={rating} />
               </div>
             </div>

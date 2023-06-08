@@ -8,9 +8,9 @@ const RatingsIcons = ({ rating }) => {
     return (
       <span key={index} rating={index} className="flex ">
         {rating > index + 1 ? (
-          <FaStar className="text-primary" />
+          <FaStar className="text-yellow-500" />
         ) : rating > number ? (
-          <FaStarHalfAlt className="text-primary" />
+          <FaStarHalfAlt className="text-yellow-500" />
         ) : (
           <AiOutlineStar className="text-yellow-500" />
         )}
@@ -19,7 +19,7 @@ const RatingsIcons = ({ rating }) => {
   });
   return (
     <>
-      <div>{ratingStar}</div>
+      <div className="flex justify-center gap-2 items-center">{ratingStar}</div>
     </>
   );
 };
