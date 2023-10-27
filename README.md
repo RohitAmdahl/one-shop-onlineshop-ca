@@ -1,4 +1,13 @@
 # Getting Started with Create React App
+![one-shop](https://github.com/RohitAmdahl/one-shop-onlineshop-ca/assets/91061651/1fde51df-4a0b-4b8d-ac85-c30fa9e396f9)
+
+#Description
+
+Upon finishing a React course, I tackled an e-commerce project. I chose Tailwind CSS for its flexibility. With its utility classes and components, I swiftly created a captivating, responsive platform. I focused on key features like a shopping cart and detailed product pages, ensuring smooth navigation and efficient cart functionality. This project highlighted my skills in building modern, user-centric web applications by combining React's power with Tailwind CSS.
+
+#Tech 
+React
+Tailwind CSS
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
